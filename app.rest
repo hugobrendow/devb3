@@ -1,0 +1,17 @@
+###
+POST http://localhost:8080/eventos
+content-type: application/json
+
+{
+  "id": 4,
+  "cnpj": "376277771111111",
+  "empresa": "Ada",
+  "nome": "Show da virada",
+  "descricao": "Show dos Agroboys",
+  "data": "2022-12-31T20:00:00",
+  "local": "São Paulo",
+  "preco": 500,
+  "capacidade": 2000,
+  "inicioVendas": "2022-12-01T08:00:00",
+  "fimVendas": "2022-12-30T20:00:00"
+}
