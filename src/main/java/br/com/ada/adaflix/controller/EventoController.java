@@ -30,4 +30,9 @@ public class EventoController {
     public Evento buscarPorId(@PathVariable Long id) {
         return eventoService.buscarPorId(id);
     }
+
+    @GetMapping("/eventos/filtrar")
+    public Evento buscarPorParametros(@RequestParam Long id) {
+        return eventoService.buscarPorId(id);
+    }
 }
