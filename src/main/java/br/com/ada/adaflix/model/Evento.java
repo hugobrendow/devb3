@@ -13,7 +13,6 @@ public class Evento {
     private Long id;
 
     private String cnpj = "DEFAULT";
-    private String empresa;
     private String nome;
     @Column(unique = true)
     private String descricao;
@@ -24,6 +23,18 @@ public class Evento {
     private LocalDateTime inicioVendas;
     @Column(name = "encerramento")
     private LocalDate fimVendas;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
 
     public Long getId() {
         return id;
@@ -41,13 +52,6 @@ public class Evento {
         this.cnpj = cnpj;
     }
 
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
-    }
 
     public String getNome() {
         return nome;
