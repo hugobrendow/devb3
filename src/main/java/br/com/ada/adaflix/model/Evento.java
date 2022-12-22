@@ -24,7 +24,7 @@ public class Evento {
     @Column(name = "encerramento")
     private LocalDate fimVendas;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "empresa_id")
     private Empresa empresa;
 
