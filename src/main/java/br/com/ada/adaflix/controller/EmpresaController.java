@@ -1,5 +1,7 @@
 package br.com.ada.adaflix.controller;
 
+import br.com.ada.adaflix.dto.EmpresaRequestDTO;
+import br.com.ada.adaflix.dto.EnderecoViaCepDTO;
 import br.com.ada.adaflix.model.Empresa;
 import br.com.ada.adaflix.service.EmpresaService;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +19,7 @@ public class EmpresaController {
     }
 
     @PostMapping
-    public Empresa salvar(@RequestBody Empresa empresa) {
+    public Empresa salvar(@RequestBody EmpresaRequestDTO empresa) {
         Empresa empresaSalva = null;
 
         try {
@@ -37,5 +39,10 @@ public class EmpresaController {
     @GetMapping("/{id}")
     public Empresa buscaPorId(@PathVariable Long id) {
         return null;
+    }
+
+    @GetMapping("/cep/{cep}")
+    public EnderecoViaCepDTO buscaEndereco(@PathVariable String cep) {
+        return empresaService.buscarEndereco(cep);
     }
 }
