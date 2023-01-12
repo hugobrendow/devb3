@@ -17,4 +17,8 @@ public class UsuarioService {
         // Implementa regras de validações, etc...
         return usuarioRepository.save(usuario);
     }
+
+    public Usuario buscarPorId(Long id) {
+        return usuarioRepository.findById(id).orElseThrow(() -> new IllegalArgumentException());
+    }
 }
