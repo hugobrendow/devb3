@@ -32,7 +32,7 @@ public class EmpresaService {
 
         // Consultar CEP...
         // GET
-        EnderecoViaCepDTO endereco = viaCepService.getEndereco(empresaDTO.getEndereco().getCep());
+        EnderecoViaCepDTO endereco = viaCepService.getEnderecoWebClient(empresaDTO.getEndereco().getCep());
 
         Endereco enderecoAtualizado = new Endereco();
         enderecoAtualizado.setLogradouro(endereco.getLogradouro());
