@@ -1,6 +1,7 @@
 package br.com.ada.adaflix.service;
 
 import br.com.ada.adaflix.dto.IngressoRequestDTO;
+import br.com.ada.adaflix.dto.IngressoResponseDTO;
 import br.com.ada.adaflix.model.Evento;
 import br.com.ada.adaflix.model.Ingresso;
 import br.com.ada.adaflix.model.Usuario;
@@ -47,6 +48,8 @@ public class IngressoService {
         ingressoSalvar.setFormaPagamento(ingressoDTO.getFormaPagamento());
         ingressoSalvar.setUsuario(usuario);
 
-        return ingressoRepository.save(ingressoSalvar);
+        Ingresso ingressoSalvo = ingressoRepository.save(ingressoSalvar);
+
+        return ingressoSalvo;
     }
 }
